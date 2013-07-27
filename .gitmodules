@@ -1,0 +1,3 @@
+[submodule "modules/native-ios"]
+	path = modules/native-ios
+	url = ssh://git@stash.spielmeister.com:7999/spellios/native-ios.git
