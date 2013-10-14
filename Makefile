@@ -1,4 +1,4 @@
-.DEFAULT: release
+DEFAULT: release
 
 .PHONY: clean
 clean:
