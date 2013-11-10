@@ -8,3 +8,5 @@ clean:
 release: clean
 	mkdir build/
 
+	rm modules/native-ios/tealeaf/native-core
+	ln -sf ../../../native-core modules/native-ios/tealeaf/native-core
