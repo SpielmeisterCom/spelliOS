@@ -1,4 +1,5 @@
 DEFAULT: release
+BUILD_DIR_RELEASE	= build/release
 
 .PHONY: clean
 clean:
@@ -8,7 +9,9 @@ clean:
 release: clean
 	mkdir build/
 
-	mkdir -p build/release
-	cp -aR modules/native-ios/tealeaf build/release
-	cp -aR modules/native-core/* build/release/tealeaf/native-core
+	mkdir -p $(BUILD_DIR_RELEASE) 
+	cp -aR modules/native-ios/tealeaf $(BUILD_DIR_RELEASE)
+	cp -aR modules/native-core/* $(BUILD_DIR_RELEASE)/tealeaf/native-core
+
+	cd $(BUILD_DIR_RELEASE)/tealeaf && xcodebuild -target TeaLeafIOS -sdk iphoneos6.1 -configuration Release -jobs 2
 
