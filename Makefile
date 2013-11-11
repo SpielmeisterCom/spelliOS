@@ -1,7 +1,7 @@
 DEFAULT: all
 BUILD_DIR_RELEASE	= build/release
 BUILD_DIR_DEBUG		= build/debug
-
+XCODEBUILD		= xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -target TeaLeafIOS -sdk iphoneos6.1 -jobs 2
 .PHONY: all
 all: release debug
 
@@ -12,7 +12,7 @@ debug:
 	cp -aR modules/native-ios/tealeaf $(BUILD_DIR_DEBUG)
 	cp -aR modules/native-core/* $(BUILD_DIR_DEBUG)/tealeaf/native-core
 	cp -aR modules/jansson/* $(BUILD_DIR_DEBUG)/tealeaf/deps/jansson
-	cd $(BUILD_DIR_DEBUG)/tealeaf && xcodebuild -target TeaLeafIOS -sdk iphoneos6.1 -configuration Debug -jobs 2
+	cd $(BUILD_DIR_DEBUG)/tealeaf && $(XCODEBUILD) -configuration Debug 
 
 .PHONY: release 
 release:
@@ -21,5 +21,5 @@ release:
 	cp -aR modules/native-ios/tealeaf $(BUILD_DIR_RELEASE)
 	cp -aR modules/native-core/* $(BUILD_DIR_RELEASE)/tealeaf/native-core
 	cp -aR modules/jansson/* $(BUILD_DIR_RELEASE)/tealeaf/deps/jansson
-	cd $(BUILD_DIR_RELEASE)/tealeaf && xcodebuild -target TeaLeafIOS -sdk iphoneos6.1 -configuration Release -jobs 2
+	cd $(BUILD_DIR_RELEASE)/tealeaf && $(XCODEBUILD) -configuration Release 
 
