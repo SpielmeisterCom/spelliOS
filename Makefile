@@ -13,6 +13,7 @@ debug:
 	cp -aR modules/native-core/* $(BUILD_DIR_DEBUG)/tealeaf/native-core
 	cp -aR modules/jansson/* $(BUILD_DIR_DEBUG)/tealeaf/deps/jansson
 	cd $(BUILD_DIR_DEBUG)/tealeaf && $(XCODEBUILD) -configuration Debug 
+	cp launchClient.js build/
 
 .PHONY: release 
 release:
@@ -22,4 +23,5 @@ release:
 	cp -aR modules/native-core/* $(BUILD_DIR_RELEASE)/tealeaf/native-core
 	cp -aR modules/jansson/* $(BUILD_DIR_RELEASE)/tealeaf/deps/jansson
 	cd $(BUILD_DIR_RELEASE)/tealeaf && $(XCODEBUILD) -configuration Release 
+	cp launchClient.js build/
 
