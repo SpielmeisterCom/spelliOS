@@ -129,6 +129,7 @@ var Context2D = function(opts) {
 	
 	this.flush = function() {
 		NATIVE.gl.flushImages();
+		NATIVE.gc && NATIVE.gc.runGC();
 	};
 	
 	this.loadIdentity = function() {
