@@ -1,7 +1,7 @@
 DEFAULT: all
 BUILD_DIR_RELEASE	= build/release
 BUILD_DIR_DEBUG		= build/debug
-XCODEBUILD		= xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -target TeaLeafIOS -sdk iphoneos6.1 -jobs 2
+XCODEBUILD		= xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -target TeaLeafIOS -sdk iphoneos7 -jobs 2
 .PHONY: all
 all: release debug
 
