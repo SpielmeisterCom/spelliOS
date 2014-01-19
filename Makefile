@@ -6,7 +6,8 @@ all:
 	mkdir build
 
 	mkdir modules/Ejecta/App || true
-	
+	cp index.js modules/Ejecta/App
+
 	# try to compile Ejecta
 	cd modules/Ejecta && $(XCODEBUILD) -configuration Debug 
 	cd modules/Ejecta && $(XCODEBUILD) -configuration Release 
