@@ -1,5 +1,5 @@
 DEFAULT: all
-XCODEBUILD		= xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -target Ejecta -sdk iphoneos -jobs 2
+XCODEBUILD		= xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO ARCHS="armv7 arm64 armv7s" -target Ejecta -sdk iphoneos -jobs 2
 .PHONY: all
 all:
 	rm -rf build/ || true
